@@ -1,0 +1,74 @@
+{
+  "expo": {
+    "name": "HabitFlow",
+    "slug": "habitflow2",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "habitflow",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.habitflow.app",
+      "infoPlist": {
+        "NSMotionUsageDescription": "HabitFlow usa el acelerómetro y giroscopio para registrar tu actividad física y tiempo de concentración.",
+        "NSCameraUsageDescription": "HabitFlow usa la cámara para que puedas documentar tus hábitos con una foto diaria.",
+        "NSPhotoLibraryUsageDescription": "HabitFlow accede a tu biblioteca para guardar las fotos de tus hábitos.",
+        "NSLocationWhenInUseUsageDescription": "HabitFlow usa tu ubicación para registrar la distancia que recorres cada día."
+      }
+    },
+    "android": {
+      "package": "com.habitflow.app",
+      "adaptiveIcon": {
+        "backgroundColor": "#13131F",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "ACTIVITY_RECOGNITION",
+        "BODY_SENSORS",
+        "CAMERA",
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "POST_NOTIFICATIONS",
+        "RECEIVE_BOOT_COMPLETED",
+        "VIBRATE"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#6C63FF",
+          "defaultChannel": "habitflow-reminders",
+          "sounds": []
+        }
+      ],
+      [
+        "expo-sensors",
+        {
+          "motionPermission": "HabitFlow necesita acceso al movimiento para registrar tus hábitos automáticamente."
+        }
+      ],
+      "expo-sharing",
+      "expo-font",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 24
+          },
+          "ios": {}
+        }
+      ],
+      "@react-native-community/datetimepicker"
+    ]
+  }
+}
